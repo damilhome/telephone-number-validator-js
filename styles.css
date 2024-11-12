@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #3B3B4F;
+    --text-color: #FFF;
+    --dark-text-color: #0A0A23;
+    --border-color: #000;
+    --phone-bg-color: #DFDFE2;
+    --invalid-phone-text-color: #4D3800;
+    --valid-phone-text-color: #00471B;
+    --btn-bg: linear-gradient(#FFF, #928D86);
+    --btn-color: #0A0A23;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+}
+
+main {
+    text-align: center;
+    width: 500px;
+    padding: 10px;
+}
+
+.logo {
+    width: 320px;
+    margin: 40px auto;
+}
+
+.title {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.phone-container {
+    width: 320px;
+    margin: auto;
+    color: var(--dark-text-color);
+    border: 18px solid var(--border-color);
+    border-radius: 18px;
+    background-color: var(--phone-bg-color);
+}
+
+.phone__camera{
+    height: 30px;
+    background-color: var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.camera__lens {
+    width: 15px;
+    height: 15px;
+    background-color: var(--phone-bg-color);
+    border-radius: 50%;
+}
+
+.phone__input-container{
+    height: 130px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.phone__label {
+    font-size: 1.2rem;
+}
+
+.phone__input {
+    height: 50px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.phone__results {
+    height: 350px;
+    overflow: scroll;
+}
+
+.phone__result {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.valid {
+    color: var(--valid-phone-text-color);
+}
+
+.invalid {
+    color: var(--invalid-phone-text-color);
+}
+
+.btn__container {
+    height: 50px;
+    background-color: var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn__styles {
+    padding: 5px 30px;
+    font-size: 1.2rem;
+    background: var(--btn-bg);
+    border-width: 2px;
+}
