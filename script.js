@@ -17,23 +17,18 @@ checkBtn.addEventListener('click', () => {
         return
     }
 
-    const usPhoneRegex = /^(1)?(\s?\(?[0-9][0-9][0-9]\)?)([-\s]?[0-9][0-9][0-9])([-\s]?[0-9][0-9][0-9][0-9])$/
+    const usPhoneRegex = /^(1\s?)?(\([0-9]{3}\)|[0-9]{3})([-\s]?[0-9]{3})([-\s]?[0-9]{4})$/;
 
     const valid = `Valid US number: ${phone}`;
     const invalid = `Invalid US number: ${phone}`;
 
     if(usPhoneRegex.test(phone)) {
-        /* const paragraph = document.createElement('p'); */
-        /* paragraph.classList.add('phone__result'); */
         resultsDiv.classList.remove('invalid');
         resultsDiv.classList.add('valid');
         resultsDiv.textContent = valid;
     } else {
-        /* const paragraph = document.createElement('p'); */
-        /* paragraph.classList.add('phone__result'); */
         resultsDiv.classList.remove('valid');
         resultsDiv.classList.add('invalid');
         resultsDiv.textContent = invalid;
-        /* resultsDiv.appendChild(paragraph); */
     }
 })
