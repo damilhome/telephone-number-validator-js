@@ -4,12 +4,10 @@ const userInput = document.getElementById('user-input');
 const resultsDiv = document.getElementById('results-div');
 
 clearBtn.addEventListener('click', () => {
-    console.log('entrou clear')
     resultsDiv.innerHTML = '';
 })
 
-checkBtn.addEventListener('click', () => {
-    console.log('entrou check')
+const checkPhone = () => {
     const phone = userInput.value;
 
     if(phone === '') {
@@ -23,12 +21,23 @@ checkBtn.addEventListener('click', () => {
     const invalid = `Invalid US number: ${phone}`;
 
     if(usPhoneRegex.test(phone)) {
-        resultsDiv.classList.remove('invalid');
-        resultsDiv.classList.add('valid');
-        resultsDiv.textContent = valid;
+        const paragraph = document.createElement('p');
+        paragraph.classList.add('phone__result');
+        paragraph.classList.add('valid');
+        paragraph.textContent = valid;
+        resultsDiv.insertBefore(paragraph, resultsDiv.firstChild);
     } else {
-        resultsDiv.classList.remove('valid');
-        resultsDiv.classList.add('invalid');
-        resultsDiv.textContent = invalid;
+        const paragraph = document.createElement('p');
+        paragraph.classList.add('phone__result');
+        paragraph.classList.add('invalid');
+        paragraph.textContent = invalid;
+        resultsDiv.insertBefore(paragraph, resultsDiv.firstChild);
     }
-})
+}
+
+checkBtn.addEventListener('click', checkPhone);
+userInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      checkPhone();
+    }
+});  
